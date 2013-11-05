@@ -1,0 +1,105 @@
+---
+- hosts: main
+  tasks:
+    # - name: Install desktop environment
+    #   pacman: name=$item state=installed update_cache=yes
+    #   sudo: yes
+    #   with_items:
+    #     - cinnamon
+    #     - gdm
+    #     - xorg
+
+    - name: Install packages
+      pacman: name=$item state=installed
+      sudo: yes
+      with_items:
+        - ack
+        - avidemux-gtk
+        - bpython
+        - calibre
+        - curl
+        - cuetools
+        - deadbeef
+        - faenza-icon-theme
+        - firefox
+        - git
+        - gitg
+        - gparted
+        - gvim
+        - mencoder
+        - mkvtoolnix-gtk
+        - nemo
+        - nodejs
+        - opera
+        - pavucontrol
+        - perl-image-exiftool
+        - php-tidy
+        - pidgin
+        - postgresql
+        - python2-eyed3
+        - ruby
+        - shntool
+        - skype
+        - smplayer
+        - synapse
+        - terminator
+        - tmux
+        - transmission-gtk
+        - tree
+        - ttf-ubuntu-font-family
+        - unrar
+        - virtualbox
+        - vlc
+        - xdotool
+        - xsel
+        - zsh
+
+    - name: Install node.js packages
+      npm: name=$item state=latest global=yes
+      sudo: yes
+      with_items:
+          - coffee-script
+          - grunt
+          - testem
+          - yuglify
+
+    - name: Install ruby gems
+      gem: name=$item state=latest user_install=no
+      sudo: yes
+      with_items:
+          - compass
+          - tmuxinator
+
+    - name: Install python packages
+      pip: name=$item state=latest
+      sudo: yes
+      with_items:
+          - docopt
+          - Fabric
+          - gevent
+          - httpie
+          - ipython
+          - lxml
+          - numpy
+          - pandas
+          - path.py
+          - pep8
+          - pillow
+          - psycopg2
+          - pyflakes
+          - pyzmq
+          - requests
+          - see
+          - sh
+          - sphinx
+          - tornado
+          - virtualenv
+
+    #AUR packages
+          # - cower
+          # - flacon
+          # - google-chrome-dev
+          # - pacaur
+          # - jdownloader
+          # - rar
+          # - shutter

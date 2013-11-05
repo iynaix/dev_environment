@@ -1,0 +1,17 @@
+Introduction
+============
+
+A set of ansible playbooks to help set up my (opinionated) development environment from a base arch install.
+
+This is scratching my own itch that setting up a customized work environment takes up way more memory and effort than I care to do.
+
+TODO
+====
+
+- Packages from AUR
+- Symlinks
+- git setup
+- vim setup
+- zsh setup
+- theme setup
+- machine specific setup
